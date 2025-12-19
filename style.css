@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+/* Reset básico e Fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Variáveis idênticas ao seu projeto original */
+:root {
+    --primary: #B8B8B8;
+    --secondary: #181818;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --glass: rgba(26, 26, 26, 0.85);
+}
+
+body {
+    background-color: var(--secondary);
+    color: var(--light);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+.bio-container {
+    width: 100%;
+    max-width: 480px; /* Largura típica de mobile */
+    padding: 2rem 1.5rem;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Header do Perfil */
+.profile-header {
+    margin-bottom: 2.5rem;
+}
+
+.profile-img-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    padding: 4px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    background-color: var(--secondary);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Garante que o logo caiba */
+    border-radius: 50%;
+}
+
+.profile-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--light);
+}
+
+.profile-header p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+/* Badge de Status (Opcional, mas moderno) */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #333333;
+    color: var(--primary);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid #787878;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #2ecc71; /* Verde para aberto */
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 5px #2ecc71;
+}
+
+/* Botões de Link */
+.links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--glass);
+    color: var(--light);
+    text-decoration: none;
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+/* Ícones dentro dos botões */
+.icon-box {
+    font-size: 1.5rem;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    color: var(--primary);
+    transition: transform 0.3s;
+}
+
+.link-btn span {
+    flex: 1;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0 10px;
+}
+
+.share-icon {
+    font-size: 0.8rem;
+    color: var(--gray);
+    opacity: 0.5;
+}
+
+/* Hover Effects */
+.link-btn:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+    background-color: #78787854; /* Gold bem suave */
+}
+
+.link-btn:hover .icon-box {
+    transform: scale(1.1);
+}
+
+.link-btn:hover .share-icon {
+    opacity: 1;
+    color: var(--primary);
+}
+
+/* Estilo para o Botão Principal (Destaque) */
+.link-btn.destaque {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    box-shadow: 0 0px 10px #ffffff8f;
+}
+
+.link-btn.destaque .icon-box {
+    color: var(--secondary);
+}
+
+.link-btn.destaque .share-icon {
+    color: var(--secondary);
+    opacity: 0.7;
+}
+
+.link-btn.destaque:hover {
+    background-color: #ffffffe7;
+    box-shadow: 0 0px 20px #ffffff8f;
+}
+
+/* Botão Secundário (Site) */
+.link-btn.secondary {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 0.5rem;
+}
+
+/* Botão de Compartilhar (no final) */
+.share-profile {
+    background: none;
+    border: none;
+    color: var(--gray);
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 10px;
+}
+
+.share-profile:hover {
+    color: var(--primary);
+}
+
+footer {
+    margin-top: 2rem;
+    color: var(--gray);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries para Telas Pequenas */
+@media (max-width: 350px) {
+    .profile-header h1 { font-size: 1.2rem; }
+    .link-btn { padding: 0.8rem 1rem; }
+}
