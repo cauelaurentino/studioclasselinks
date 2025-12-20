@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const shareBtn = document.getElementById('btn-share');
     shareBtn.addEventListener('click', async () => {
         const shareData = {
-            title: 'Barbearia do Leão',
-            text: 'Agende seu horário e conheça a Barbearia do Leão!',
+            title: 'Studio Classe',
+            text: 'Agende seu horário e conheça a barbearia Studio Classe!',
             url: window.location.href
         };
         if (navigator.share) {
